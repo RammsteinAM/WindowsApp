@@ -16,3 +16,4 @@ C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\obj\
 C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
 C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.loginForm.resources
+C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.SignupForm.resources

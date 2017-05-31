@@ -1,0 +1,20 @@
+Error (31.05.2017 15:39:17): System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WindowsFormsApp1.FileUserStore.FromFileToList() in C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\FileUserStore.cs:line 34
+Error (31.05.2017 15:41:09): System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WindowsFormsApp1.FileUserStore.FromFileToList() in C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\FileUserStore.cs:line 34
+Error (31.05.2017 15:41:37): System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WindowsFormsApp1.FileUserStore.FromFileToList() in C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\FileUserStore.cs:line 34
+Error (31.05.2017 15:42:16): System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WindowsFormsApp1.FileUserStore.FromFileToList() in C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\FileUserStore.cs:line 34
+Error (31.05.2017 15:44:42): System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WindowsFormsApp1.FileUserStore.FromFileToList() in C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\FileUserStore.cs:line 34
+Error (31.05.2017 15:49:49): System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WindowsFormsApp1.FileUserStore.FromFileToList() in C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\FileUserStore.cs:line 34
+Error (31.05.2017 15:50:02): System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WindowsFormsApp1.FileUserStore.FromFileToList() in C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\FileUserStore.cs:line 34
+Error (31.05.2017 15:50:53): System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WindowsFormsApp1.FileUserStore.FromFileToList() in C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\FileUserStore.cs:line 34
+Error (31.05.2017 15:52:13): System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WindowsFormsApp1.FileUserStore.FromFileToList() in C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\FileUserStore.cs:line 34
+Error (31.05.2017 15:54:05): System.IndexOutOfRangeException: Index was outside the bounds of the array.
+   at WindowsFormsApp1.FileUserStore.FromFileToList() in C:\Users\Awet\Documents\GitHub\WindowsApp\WindowsFormsApp1\WindowsFormsApp1\FileUserStore.cs:line 34

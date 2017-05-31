@@ -14,9 +14,12 @@ namespace WindowsFormsApp1
         [STAThread]
         static void Main()
         {
+            FileUserStore fileUserStore = new FileUserStore();
+            fileUserStore.FromFileToList();
+            UserService userService = new UserService(fileUserStore);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);            
-            Application.Run(new loginForm());
+            Application.Run(new LoginForm(userService));
         }
     }
 }
