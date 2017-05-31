@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SignupForm));
             this.ButtonCancel = new System.Windows.Forms.Button();
             this.signupFullName = new System.Windows.Forms.TextBox();
             this.signupUserName = new System.Windows.Forms.TextBox();
@@ -40,6 +41,7 @@
             this.ButtonSignUp = new System.Windows.Forms.Button();
             this.signupRePassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // ButtonCancel
@@ -78,6 +80,7 @@
             this.signupPassword.Size = new System.Drawing.Size(135, 20);
             this.signupPassword.TabIndex = 3;
             this.signupPassword.UseSystemPasswordChar = true;
+            this.signupPassword.TextChanged += new System.EventHandler(this.signupPassword_TextChanged);
             // 
             // labelFullName
             // 
@@ -93,9 +96,9 @@
             this.labelUserName.AutoSize = true;
             this.labelUserName.Location = new System.Drawing.Point(10, 67);
             this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(73, 13);
+            this.labelUserName.Size = new System.Drawing.Size(90, 13);
             this.labelUserName.TabIndex = 2;
-            this.labelUserName.Text = "Մուտքանուն";
+            this.labelUserName.Text = "Օգտվողի անուն";
             // 
             // labelPassword
             // 
@@ -147,7 +150,7 @@
             // 
             // signupRePassword
             // 
-            this.signupRePassword.Location = new System.Drawing.Point(133, 133);
+            this.signupRePassword.Location = new System.Drawing.Point(133, 129);
             this.signupRePassword.Name = "signupRePassword";
             this.signupRePassword.Size = new System.Drawing.Size(135, 20);
             this.signupRePassword.TabIndex = 4;
@@ -156,17 +159,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 136);
+            this.label1.Location = new System.Drawing.Point(10, 132);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 13);
             this.label1.TabIndex = 2;
             this.label1.Text = "Գաղտնաբառ (կրկնեք)";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(133, 115);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(135, 15);
+            this.progressBar1.Step = 1;
+            this.progressBar1.TabIndex = 9;
             // 
             // SignupForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.termsLink);
             this.Controls.Add(this.iAgree);
             this.Controls.Add(this.label1);
@@ -179,6 +191,10 @@
             this.Controls.Add(this.signupFullName);
             this.Controls.Add(this.ButtonCancel);
             this.Controls.Add(this.ButtonSignUp);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "SignupForm";
             this.Text = "Գրանցում";
             this.ResumeLayout(false);
@@ -199,5 +215,6 @@
         private System.Windows.Forms.Button ButtonSignUp;
         private System.Windows.Forms.TextBox signupRePassword;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

@@ -23,9 +23,10 @@ namespace WindowsFormsApp1
 
         public void FromFileToList()
         {
-            int lineCount = File.ReadLines("users.toplabs").Count();
-            StreamReader file = new StreamReader("users.toplabs");
-
+            if (File.Exists("users.toplabs"))
+            {
+                int lineCount = File.ReadLines("users.toplabs").Count();
+                StreamReader file = new StreamReader("users.toplabs");
             for (int i = 0; i < lineCount; i++)
             {
                 string[] fields = file.ReadLine().Split(':');
@@ -39,7 +40,7 @@ namespace WindowsFormsApp1
                 }
             }
             file.Close();
-
+            }
         }
 
         public void WriteToFile(User user, int id)

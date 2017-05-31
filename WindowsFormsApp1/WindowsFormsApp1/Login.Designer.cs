@@ -57,7 +57,7 @@
             this.buttonOpenSignUpForm.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.buttonOpenSignUpForm.Location = new System.Drawing.Point(192, 12);
             this.buttonOpenSignUpForm.Name = "buttonOpenSignUpForm";
-            this.buttonOpenSignUpForm.Size = new System.Drawing.Size(80, 26);
+            this.buttonOpenSignUpForm.Size = new System.Drawing.Size(80, 30);
             this.buttonOpenSignUpForm.TabIndex = 4;
             this.buttonOpenSignUpForm.Text = "Գրանցվել";
             this.buttonOpenSignUpForm.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;

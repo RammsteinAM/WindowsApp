@@ -34,7 +34,7 @@ namespace WindowsFormsApp1
             bool noSuchUsername = true;
             for (int i = 0; i < _store.GetUsers().Count; i++)
             {
-                if (username == _store.GetUsers()[i]._username)
+                if (username == _store.GetUsers()[i]._username.ToLower())
                 {
                     noSuchUsername = false;
                 }

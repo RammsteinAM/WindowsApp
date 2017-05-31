@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
         {
             if (this.signupFullName.TextLength < 3 || this.signupUserName.TextLength < 3 || this.signupPassword.TextLength < 6 || this.signupRePassword.TextLength < 6)
             {
-                MessageBox.Show("Բոլոր դաշտերը լրացնելը պարտադիր է։ Անունն ու մուտքանունը պետք է պարունակեն առնվազն 3 նիշ, իսկ գաղտնաբառը՝ 6։", "Գրանցումը չհաջողվեց",
+                MessageBox.Show("Բոլոր դաշտերը լրացնելը պարտադիր է։ Անունն ու Օգտվողի անունը պետք է պարունակեն առնվազն 3 նիշ, իսկ գաղտնաբառը՝ 6։", "Գրանցումը չհաջողվեց",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }
@@ -56,9 +56,9 @@ namespace WindowsFormsApp1
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }
-            else if (!_userService.CheckDuplicateUsername(signupUserName.Text))
+            else if (!_userService.CheckDuplicateUsername(signupUserName.Text.ToLower()))
             {
-                MessageBox.Show("Մուտքանունն արդեն զբաղված է։", "Գրանցումը չհաջողվեց",
+                MessageBox.Show("Օգտվողի անունն արդեն զբաղված է։", "Գրանցումը չհաջողվեց",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }
@@ -71,6 +71,20 @@ namespace WindowsFormsApp1
                 DialogResult = DialogResult.OK;
             }
 
+        }
+        
+        private void signupPassword_TextChanged(object sender, EventArgs e)
+        {
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = 6;
+            try
+            {
+                progressBar1.Value = signupPassword.TextLength;
+            }
+            catch (Exception)
+            {
+            }
+            
         }
     }
 }
