@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace WindowsFormsApp1
 {
@@ -18,6 +19,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             _userService = userService;
         }
+        
 
         private void iAgree_CheckedChanged(object sender, EventArgs e)
         {
@@ -56,6 +58,12 @@ namespace WindowsFormsApp1
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }
+            //else if (signupFullName.Text.IndexOf(':') > -1 || signupUserName.Text.IndexOf(':') > -1 || signupPassword.Text.IndexOf(':') > -1)
+            //{
+            //    MessageBox.Show("Դուք չեք կարող օգտագործել «:» նշանը դաշտերից որեւէ մեկում։", "Գրանցումը չհաջողվեց",
+            //    MessageBoxButtons.OK,
+            //    MessageBoxIcon.Warning);
+            //}
             else if (!_userService.CheckDuplicateUsername(signupUserName.Text.ToLower()))
             {
                 MessageBox.Show("Օգտվողի անունն արդեն զբաղված է։", "Գրանցումը չհաջողվեց",
@@ -72,19 +80,18 @@ namespace WindowsFormsApp1
             }
 
         }
-        
         private void signupPassword_TextChanged(object sender, EventArgs e)
         {
             progressBar1.Minimum = 0;
-            progressBar1.Maximum = 6;
+            progressBar1.Maximum = 120;
             try
             {
-                progressBar1.Value = signupPassword.TextLength;
+                progressBar1.Value = signupPassword.TextLength*20;
             }
             catch (Exception)
             {
             }
-            
+
         }
     }
 }

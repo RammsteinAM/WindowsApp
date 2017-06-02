@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
     public class FileUserStore : IUserStore
     {
         private List<User> _users = new List<User>();
-
+        public const char Separator = ((char)007);
         public void AddUser(User user)
         {
                 _users.Add(user);
@@ -19,6 +19,10 @@ namespace WindowsFormsApp1
         public List<User> GetUsers()
         {
             return _users;
+        }
+        public FileUserStore()
+        {
+            FromFileToList();
         }
 
         public void FromFileToList()
@@ -29,7 +33,11 @@ namespace WindowsFormsApp1
                 StreamReader file = new StreamReader("users.toplabs");
             for (int i = 0; i < lineCount; i++)
             {
-                string[] fields = file.ReadLine().Split(':');
+                string[] fields = file.ReadLine().Split(Separator);
+                if (fields.Length < 3)
+                {
+                    continue;
+                }                
                 try
                 {
                     _users.Add(new User() { _fullName = fields[1], _username = fields[2], _password = fields[3] });
@@ -45,7 +53,7 @@ namespace WindowsFormsApp1
 
         public void WriteToFile(User user, int id)
         {
-            File.AppendAllText("users.toplabs", $"\n{id}:{user._fullName}:{user._username}:{user._password}");
+            File.AppendAllText("users.toplabs", $"\n{id}{Separator}{user._fullName}{Separator}{user._username}{Separator}{user._password}");
             
             string readText = File.ReadAllText("users.toplabs");
         }
