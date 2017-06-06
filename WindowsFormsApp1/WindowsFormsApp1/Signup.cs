@@ -18,6 +18,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             _userService = userService;
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = 120;
         }
         
 
@@ -58,12 +60,6 @@ namespace WindowsFormsApp1
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Warning);
             }
-            //else if (signupFullName.Text.IndexOf(':') > -1 || signupUserName.Text.IndexOf(':') > -1 || signupPassword.Text.IndexOf(':') > -1)
-            //{
-            //    MessageBox.Show("Դուք չեք կարող օգտագործել «:» նշանը դաշտերից որեւէ մեկում։", "Գրանցումը չհաջողվեց",
-            //    MessageBoxButtons.OK,
-            //    MessageBoxIcon.Warning);
-            //}
             else if (!_userService.CheckDuplicateUsername(signupUserName.Text.ToLower()))
             {
                 MessageBox.Show("Օգտվողի անունն արդեն զբաղված է։", "Գրանցումը չհաջողվեց",
@@ -80,18 +76,11 @@ namespace WindowsFormsApp1
             }
 
         }
+        private int _passwordLastCharCount = 0;
         private void signupPassword_TextChanged(object sender, EventArgs e)
         {
-            progressBar1.Minimum = 0;
-            progressBar1.Maximum = 120;
-            try
-            {
-                progressBar1.Value = signupPassword.TextLength*20;
-            }
-            catch (Exception)
-            {
-            }
-
+            progressBar1.Increment(20*(signupPassword.TextLength - _passwordLastCharCount));
+            _passwordLastCharCount = signupPassword.TextLength;
         }
     }
 }

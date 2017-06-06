@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Timeout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timeout.Designer.cs">
+      <DependentUpon>Timeout.cs</DependentUpon>
+    </Compile>
     <Compile Include="IUserStore.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -78,6 +84,9 @@
     </Compile>
     <EmbeddedResource Include="Signup.resx">
       <DependentUpon>Signup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timeout.resx">
+      <DependentUpon>Timeout.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

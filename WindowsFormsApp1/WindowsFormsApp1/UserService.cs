@@ -19,14 +19,14 @@ namespace WindowsFormsApp1
             {
                 _fullName = fullName,
                 _username = username,
-                _password = password
+                _password = Encrypt(password)
             };
             _store.AddUser(user);
             return user;
         }
         public bool Check(string username, string password)
         {
-            var user = _store.GetUsers().Where(x => x._username.ToLower() == username && x._password == password).FirstOrDefault();
+            var user = _store.GetUsers().Where(x => x._username.ToLower() == username && x._password == Encrypt(password)).FirstOrDefault();
             return user != null;
         }
         public bool CheckDuplicateUsername(string username)
@@ -52,6 +52,13 @@ namespace WindowsFormsApp1
                 }
             }
             return usernameExists;
+        }
+        private string Encrypt(string password)
+        {
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+            return Convert.ToBase64String(data);
         }
 
     }

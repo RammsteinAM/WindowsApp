@@ -51,6 +51,14 @@ namespace WindowsFormsApp1
             }
         }
 
+        public string Encrypt(string password)
+        {
+            byte[] data = System.Text.Encoding.ASCII.GetBytes(password);
+            data = new System.Security.Cryptography.SHA256Managed().ComputeHash(data);
+            String hash = System.Text.Encoding.ASCII.GetString(data);
+            return Convert.ToBase64String(data);
+        }
+
         public void WriteToFile(User user, int id)
         {
             File.AppendAllText("users.toplabs", $"\n{id}{Separator}{user._fullName}{Separator}{user._username}{Separator}{user._password}");

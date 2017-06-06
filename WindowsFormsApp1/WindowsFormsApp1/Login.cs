@@ -18,8 +18,16 @@ namespace WindowsFormsApp1
             InitializeComponent();
             _userService = userService;
         }
-        
+        private void InputLimitDialog()
+        {
+            this.Enabled = false;
+            Timeout timeout = new Timeout();
+            timeout.ShowDialog();
+            _numberOfInputs = 0;
+            this.Enabled = true;
+        }
 
+        private int _numberOfInputs = 0;
         private void button1_Click(object sender, EventArgs e)
         {            
             bool grantAccess = _userService.Check(loginUsername.Text.ToLower(), loginPassword.Text);
@@ -30,9 +38,14 @@ namespace WindowsFormsApp1
             }
             else
             {
+                _numberOfInputs++;
                 var err = MessageBox.Show("Մուտքագրված է սխալ օգտվողի անուն կամ գաղտնաբառ։", "Մուտքը չհաջողվեց",
                     MessageBoxButtons.RetryCancel,
                     MessageBoxIcon.Error);
+                if (_numberOfInputs > 3)
+                {
+                    InputLimitDialog();
+                }
                 if (err == DialogResult.Cancel)
                 {
                     Application.Exit();
@@ -72,6 +85,11 @@ namespace WindowsFormsApp1
             }
             else
             {
+                _numberOfInputs++;
+                if (_numberOfInputs > 3)
+                {
+                    InputLimitDialog();
+                }
                 passwordWrong.Visible = true;
             }
         }
