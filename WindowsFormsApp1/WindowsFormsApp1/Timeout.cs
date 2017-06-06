@@ -26,5 +26,10 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void Timeout_FormClosing(object sender, FormClosingEventArgs e)
+        {
+          
+        }
     }
 }

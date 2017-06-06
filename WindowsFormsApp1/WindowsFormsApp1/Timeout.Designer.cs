@@ -36,6 +36,7 @@
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            this.label1.UseWaitCursor = true;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Timeout
@@ -50,6 +51,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.UseWaitCursor = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Timeout_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
